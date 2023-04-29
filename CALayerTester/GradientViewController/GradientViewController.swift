@@ -48,6 +48,10 @@ class GradientViewController: UIViewController, GradientSettingsContainer {
             gradientLayer.locations = colors.map { NSNumber(value: $0.position) }
         }.store(in: &bag)
         
+        settings.didUpdateColorLocations = { [unowned self] in
+            self.gradientLayer.locations = self.settings.colors.map { NSNumber(value: $0.position) }
+        }
+        
     }
 
     private func setupGradient() {

@@ -39,6 +39,8 @@ class GradientSettings {
         .init(color: .blue, position: 1)
     ]
     
+    var didUpdateColorLocations: ( () -> Void )?
+    
     init() {
         colors = calculateLocations(for: colors)
     }
@@ -77,6 +79,6 @@ class GradientSettings {
     }
     
     func didUpdateColorsLocation() {
-        colors = colors
+        didUpdateColorLocations?()
     }
 }
