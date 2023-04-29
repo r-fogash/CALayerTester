@@ -40,22 +40,22 @@ class GradientSettings {
     ]
     
     init() {
-        colors = calculateLocations(colors: colors)
+        colors = calculateLocations(for: colors)
     }
     
     func addColor(_ color: UIColor) {
         var updatedColors = colors
         updatedColors.append(.init(color: color, position: 1))
         
-        colors = calculateLocations(colors: updatedColors)
+        colors = calculateLocations(for: updatedColors)
     }
     
     func deleteColor(at index: Int) {
         let updatedColors = colors
-        colors = calculateLocations(colors: updatedColors)
+        colors = calculateLocations(for: updatedColors)
     }
     
-    func calculateLocations(colors: [ColorRecord]) -> [ColorRecord] {
+    func calculateLocations(for colors: [ColorRecord]) -> [ColorRecord] {
         let mColors = colors
         let numberOfColors = mColors.count
         
