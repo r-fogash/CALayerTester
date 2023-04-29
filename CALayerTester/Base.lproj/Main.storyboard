@@ -376,7 +376,7 @@
                             <constraint firstItem="6fF-ha-yR1" firstAttribute="top" secondItem="6vm-Xx-Jx5" secondAttribute="top" id="h9v-6j-UbA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Colors" id="JId-1N-ij6"/>
+                    <tabBarItem key="tabBarItem" title="Colors" image="paintpalette.fill" catalog="system" id="JId-1N-ij6"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -498,7 +498,7 @@
                             <constraint firstItem="uHg-ni-90P" firstAttribute="trailing" secondItem="XLv-Th-iaF" secondAttribute="trailing" constant="20" id="zk8-Ip-dVC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Positions" id="UZ6-4Y-sVF"/>
+                    <tabBarItem key="tabBarItem" title="Positions" image="slider.horizontal.3" catalog="system" id="UZ6-4Y-sVF"/>
                     <connections>
                         <outlet property="gradientTypeSegmentControl" destination="jXc-aQ-t8O" id="Gaw-50-jVp"/>
                         <outlet property="startXLabel" destination="ICg-gj-a8G" id="1gH-RA-YYV"/>
@@ -535,7 +535,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="paintpalette.fill" catalog="system" width="128" height="105"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
