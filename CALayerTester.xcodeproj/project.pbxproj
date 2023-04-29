@@ -14,6 +14,7 @@
 		E176E31E29FC113F00DD9B38 /* GradientSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176E31D29FC113F00DD9B38 /* GradientSettings.swift */; };
 		E176E32029FC12F800DD9B38 /* GradientSettingsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176E31F29FC12F800DD9B38 /* GradientSettingsContainer.swift */; };
 		E176E32329FC58CC00DD9B38 /* AddColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176E32229FC58CC00DD9B38 /* AddColorTableViewCell.swift */; };
+		E176E32729FD8CC000DD9B38 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176E32629FD8CC000DD9B38 /* UIColor+hex.swift */; };
 		E1BD3B7729F199A500495A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD3B7629F199A500495A40 /* AppDelegate.swift */; };
 		E1BD3B7929F199A500495A40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD3B7829F199A500495A40 /* SceneDelegate.swift */; };
 		E1BD3B7E29F199A500495A40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BD3B7C29F199A500495A40 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		E176E31D29FC113F00DD9B38 /* GradientSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSettings.swift; sourceTree = "<group>"; };
 		E176E31F29FC12F800DD9B38 /* GradientSettingsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSettingsContainer.swift; sourceTree = "<group>"; };
 		E176E32229FC58CC00DD9B38 /* AddColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorTableViewCell.swift; sourceTree = "<group>"; };
+		E176E32629FD8CC000DD9B38 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		E1BD3B7329F199A500495A40 /* CALayerTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CALayerTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BD3B7629F199A500495A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BD3B7829F199A500495A40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E176E32529FD8CAD00DD9B38 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E176E32629FD8CC000DD9B38 /* UIColor+hex.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E1BD3B6A29F199A500495A40 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		E1BD3B7529F199A500495A40 /* CALayerTester */ = {
 			isa = PBXGroup;
 			children = (
+				E176E32529FD8CAD00DD9B38 /* Utils */,
 				E1BD3B9929F1A8C600495A40 /* Transform */,
 				E1BD3B9729F1A8BF00495A40 /* eia1956-test-pattern.jpg */,
 				E1BD3B9429F1A7A700495A40 /* AntAnimation */,
@@ -227,6 +238,7 @@
 				E1BD3B7729F199A500495A40 /* AppDelegate.swift in Sources */,
 				E176E30F29F99BB700DD9B38 /* ColorRecordTableViewCell.swift in Sources */,
 				E1BD3B9629F1A7B900495A40 /* AntAnimationViewController.swift in Sources */,
+				E176E32729FD8CC000DD9B38 /* UIColor+hex.swift in Sources */,
 				E1BD3B7929F199A500495A40 /* SceneDelegate.swift in Sources */,
 				E176E32029FC12F800DD9B38 /* GradientSettingsContainer.swift in Sources */,
 				E176E32329FC58CC00DD9B38 /* AddColorTableViewCell.swift in Sources */,

@@ -30,6 +30,7 @@ class GradientColorsController: UIViewController, GradientSettingsContainer {
                 colors.append(.item(color: color))
             }
             colors.append(.add)
+            tableView.reloadData()
         }.store(in: &bag)
         
     }
@@ -39,9 +40,20 @@ class GradientColorsController: UIViewController, GradientSettingsContainer {
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
-    func editItem(at indexPath: IndexPath) {
-        print("edit item at \(indexPath)")
+    func addColor(_ color: UIColor) {
+        settings.addColor(color)
     }
+    
+    func presentColorPicker() {
+        let colorPicker = UIColorPickerViewController()
+        colorPicker.title = "Gradient colort"
+        colorPicker.supportsAlpha = false
+        colorPicker.delegate = self
+        colorPicker.modalPresentationStyle = .popover
+        
+        self.present(colorPicker, animated: true)
+    }
+    
 }
 
 // MARK: UITableViewDataSource
@@ -63,7 +75,6 @@ extension GradientColorsController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddColorTableViewCell", for: indexPath) as! AddColorTableViewCell
             return cell
         }
-        
     }
     
 }
@@ -78,26 +89,14 @@ extension GradientColorsController: UITableViewDelegate {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){ [unowned self] performed, _, _  in
             deleteItem(at: indexPath)
         }
-        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] action, view, _ in
-            editItem(at: indexPath)
-        }
-        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        
         if indexPath.row == colors.count - 1 {
-            let alert = UIAlertController(title: "Add color", message: "Add color hex value", preferredStyle: .alert)
-            alert.addTextField { textField in
-                textField.placeholder = "color hex"
-            }
-            let addAction = UIAlertAction(title: "Add", style: .default) { [unowned self, unowned alert] action in
-                addColor(hex: alert.textFields!.first!.text!)
-            }
-            
-            alert.addAction(addAction)
-            alert.addAction(.init(title: "Cancel", style: .destructive))
-            present(alert, animated: true)
+            presentColorPicker()
         }
     }
     
@@ -105,41 +104,14 @@ extension GradientColorsController: UITableViewDelegate {
         indexPath.row == colors.count - 1
     }
     
-    func addColor(hex: String) {
-        if let color = UIColor(hex: hex) {
-            settings.addColor(color)
-            tableView.reloadData()
-        }
-    }
-    
 }
 
-extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
+// MARK: UIColorPickerViewControllerDelegate
 
-        var start = hex.index(hex.startIndex, offsetBy: 0)
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-        }
-         
-        let hexColor = String(hex[start...])
-
-        if hexColor.count == 8 {
-            let scanner = Scanner(string: hexColor)
-            var hexNumber: UInt64 = 0
-
-            if scanner.scanHexInt64(&hexNumber) {
-                r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                a = CGFloat(hexNumber & 0x000000ff) / 255
-
-                self.init(red: r, green: g, blue: b, alpha: a)
-                return
-            }
-        }
-
-        return nil
+extension GradientColorsController: UIColorPickerViewControllerDelegate {
+    
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        addColor(viewController.selectedColor)
     }
+    
 }
