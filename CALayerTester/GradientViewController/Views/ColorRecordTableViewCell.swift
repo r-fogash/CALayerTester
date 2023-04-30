@@ -18,11 +18,11 @@ class ColorRecordTableViewCell: UITableViewCell {
     var settings: GradientSettings!
     
     func fill(_ colorRecord: GradientSettings.ColorRecord) {
+        self.colorRecord = colorRecord
         colorLabel.text = colorRecord.color.hexString
         colorPreview.backgroundColor = colorRecord.color
         updateColorLocationLabel()
         slider.value = Float(colorRecord.position)
-        self.colorRecord = colorRecord
     }
     
     @IBAction func valueChanged(_ sender: UISlider) {
