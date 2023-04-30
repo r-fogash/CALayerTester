@@ -37,7 +37,6 @@ class GradientColorsController: UIViewController, GradientSettingsContainer {
     
     func deleteItem(at indexPath: IndexPath) {
         settings.deleteColor(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
     func addColor(_ color: UIColor) {

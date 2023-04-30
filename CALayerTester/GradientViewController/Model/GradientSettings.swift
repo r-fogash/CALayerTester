@@ -53,7 +53,9 @@ class GradientSettings {
     }
     
     func deleteColor(at index: Int) {
-        let updatedColors = colors
+        var updatedColors = colors
+        updatedColors.remove(at: index)
+        
         colors = calculateLocations(for: updatedColors)
     }
     
