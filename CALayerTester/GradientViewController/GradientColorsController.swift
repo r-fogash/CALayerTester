@@ -53,6 +53,10 @@ class GradientColorsController: UIViewController, GradientSettingsContainer {
         self.present(colorPicker, animated: true)
     }
     
+    private func isAddColorItemIndex(_ indexPath: IndexPath) -> Bool {
+        indexPath.row == colors.count - 1
+    }
+    
 }
 
 // MARK: UITableViewDataSource
@@ -83,8 +87,9 @@ extension GradientColorsController: UITableViewDataSource {
 extension GradientColorsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        guard indexPath.row < colors.count - 1 else { return nil }
-        
+        guard isAddColorItemIndex(indexPath) == false else {
+            return nil
+        }
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){ [unowned self] performed, _, _  in
             deleteItem(at: indexPath)
         }
@@ -94,13 +99,13 @@ extension GradientColorsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        if indexPath.row == colors.count - 1 {
+        if isAddColorItemIndex(indexPath) {
             presentColorPicker()
         }
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        indexPath.row == colors.count - 1
+        isAddColorItemIndex(indexPath)
     }
     
 }

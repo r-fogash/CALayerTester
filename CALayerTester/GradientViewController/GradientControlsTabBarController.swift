@@ -15,8 +15,8 @@ class GradientControlsTabBarController: UITabBarController, GradientSettingsCont
     
     func populateGradientSettings() {
         viewControllers?
-            .compactMap { $0 }
-            .forEach { ($0 as? GradientSettingsContainer)?.settings = settings }
+            .compactMap { $0 as? GradientSettingsContainer }
+            .forEach { $0.settings = settings }
         
     }
 

@@ -47,7 +47,11 @@ class LayerTypeViewController: UIViewController, GradientSettingsContainer {
         settings.gradientType = GradientSettings.GradientType.allCases[segmentedControl.selectedSegmentIndex]
     }
     
-    func updateLabelValues() {
+    private func updateGradientTypeSegmentedSelector() {
+        gradientTypeSegmentControl.selectedSegmentIndex = GradientSettings.GradientType.allCases.firstIndex(of: settings.gradientType)!
+    }
+    
+    private func updateLabelValues() {
         guard isViewLoaded else { return }
         
         startXLabel.text = String(format: "%0.3f", settings.startPoint.x)
@@ -56,15 +60,11 @@ class LayerTypeViewController: UIViewController, GradientSettingsContainer {
         stopYLabel.text = String(format: "%0.3f", settings.endPoint.y)
     }
     
-    func updateSliderValues() {
+    private func updateSliderValues() {
         startXSlider.value = Float(settings.startPoint.x)
         startYSlider.value = Float(settings.startPoint.y)
         stopXSlider.value = Float(settings.endPoint.x)
         stopYSlider.value = Float(settings.endPoint.y)
-    }
-    
-    func updateGradientTypeSegmentedSelector() {
-        gradientTypeSegmentControl.selectedSegmentIndex = GradientSettings.GradientType.allCases.firstIndex(of: settings.gradientType)!
     }
 
 }
