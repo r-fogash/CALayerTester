@@ -16,10 +16,10 @@ class LayerTypeViewController: UIViewController, GradientSettingsContainer {
     @IBOutlet weak var startYSlider: UISlider!
     @IBOutlet weak var stopYSlider: UISlider!
     
-    @IBOutlet weak var startXLabel: UILabel!
-    @IBOutlet weak var startYLabel: UILabel!
-    @IBOutlet weak var stopXLabel: UILabel!
-    @IBOutlet weak var stopYLabel: UILabel!
+    @IBOutlet weak var startXLabel: ControlValueLabel!
+    @IBOutlet weak var startYLabel: ControlValueLabel!
+    @IBOutlet weak var stopXLabel: ControlValueLabel!
+    @IBOutlet weak var stopYLabel: ControlValueLabel!
     
     @IBOutlet weak var gradientTypeSegmentControl: UISegmentedControl!
     
@@ -54,10 +54,10 @@ class LayerTypeViewController: UIViewController, GradientSettingsContainer {
     private func updateLabelValues() {
         guard isViewLoaded else { return }
         
-        startXLabel.text = String(format: "%0.3f", settings.startPoint.x)
-        startYLabel.text = String(format: "%0.3f", settings.startPoint.y)
-        stopXLabel.text = String(format: "%0.3f", settings.endPoint.x)
-        stopYLabel.text = String(format: "%0.3f", settings.endPoint.y)
+        startXLabel.setValue(settings.startPoint.x)
+        startYLabel.setValue(settings.startPoint.y)
+        stopXLabel.setValue(settings.endPoint.x)
+        stopYLabel.setValue(settings.endPoint.y)
     }
     
     private func updateSliderValues() {

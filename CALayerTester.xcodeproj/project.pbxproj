@@ -25,6 +25,7 @@
 		E1BD3B9629F1A7B900495A40 /* AntAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD3B9529F1A7B900495A40 /* AntAnimationViewController.swift */; };
 		E1BD3B9829F1A8BF00495A40 /* eia1956-test-pattern.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1BD3B9729F1A8BF00495A40 /* eia1956-test-pattern.jpg */; };
 		E1BD3B9B29F1A8D800495A40 /* TransformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD3B9A29F1A8D800495A40 /* TransformationsViewController.swift */; };
+		E1F0FC4529FFD6FD00A671B5 /* ControlValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0FC4429FFD6FD00A671B5 /* ControlValueLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E1BD3B9529F1A7B900495A40 /* AntAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntAnimationViewController.swift; sourceTree = "<group>"; };
 		E1BD3B9729F1A8BF00495A40 /* eia1956-test-pattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "eia1956-test-pattern.jpg"; sourceTree = "<group>"; };
 		E1BD3B9A29F1A8D800495A40 /* TransformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsViewController.swift; sourceTree = "<group>"; };
+		E1F0FC4429FFD6FD00A671B5 /* ControlValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlValueLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		E1BD3B7529F199A500495A40 /* CALayerTester */ = {
 			isa = PBXGroup;
 			children = (
+				E1F0FC4329FFD6D800A671B5 /* Common */,
 				E176E32529FD8CAD00DD9B38 /* Utils */,
 				E1BD3B9929F1A8C600495A40 /* Transform */,
 				E1BD3B9729F1A8BF00495A40 /* eia1956-test-pattern.jpg */,
@@ -157,6 +160,14 @@
 				E1BD3B9A29F1A8D800495A40 /* TransformationsViewController.swift */,
 			);
 			path = Transform;
+			sourceTree = "<group>";
+		};
+		E1F0FC4329FFD6D800A671B5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E1F0FC4429FFD6FD00A671B5 /* ControlValueLabel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			files = (
 				E176E31C29FC0F3E00DD9B38 /* GradientControlsTabBarController.swift in Sources */,
 				E176E31829FBFF7300DD9B38 /* LayerTypeViewController.swift in Sources */,
+				E1F0FC4529FFD6FD00A671B5 /* ControlValueLabel.swift in Sources */,
 				E176E30D29F99AE100DD9B38 /* GradientColorsController.swift in Sources */,
 				E176E31E29FC113F00DD9B38 /* GradientSettings.swift in Sources */,
 				E1BD3B7729F199A500495A40 /* AppDelegate.swift in Sources */,

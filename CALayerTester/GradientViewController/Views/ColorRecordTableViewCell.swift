@@ -10,8 +10,8 @@ import UIKit
 class ColorRecordTableViewCell: UITableViewCell {
 
     @IBOutlet weak var colorPreview: UIView!
-    @IBOutlet weak var colorLabel: UILabel!
-    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var colorLabel: ControlValueLabel!
+    @IBOutlet weak var positionLabel: ControlValueLabel!
     @IBOutlet weak var slider: UISlider!
     
     var colorRecord: GradientSettings.ColorRecord!
@@ -19,7 +19,7 @@ class ColorRecordTableViewCell: UITableViewCell {
     
     func fill(_ colorRecord: GradientSettings.ColorRecord) {
         self.colorRecord = colorRecord
-        colorLabel.text = colorRecord.color.hexString
+        colorLabel.setValue(colorRecord.color)
         colorPreview.backgroundColor = colorRecord.color
         updateColorLocationLabel()
         slider.value = Float(colorRecord.position)
@@ -35,6 +35,6 @@ class ColorRecordTableViewCell: UITableViewCell {
         guard let colorRecord else {
             return
         }
-        positionLabel.text = String(format: "%.3f", colorRecord.position)
+        positionLabel.setValue(colorRecord.position)
     }
 }
