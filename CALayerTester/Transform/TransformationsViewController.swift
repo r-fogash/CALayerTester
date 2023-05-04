@@ -22,18 +22,24 @@ class TransformationsViewController: UIViewController {
     @IBOutlet weak var perspectiveSlider: UISlider!
     
     var imageLayer: CALayer!
+    var imageRatio: CGFloat = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageLayer = CALayer()
-        imageLayer.frame = CGRect(origin: .zero, size: contentView.frame.size)
-        let image = UIImage(named: "eia1956-test-pattern.jpg")!
-        imageLayer.contents = image.cgImage
-        
-        contentView.layer.addSublayer(imageLayer)
-        
+        loadImage()
         updateLabels()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        let width = contentView.frame.width
+        let height = imageRatio * width
+        let x = CGFloat(0)
+        let y = (contentView.frame.height - height) / 2
+        
+        imageLayer.frame = .init(x: x, y: y, width: width, height: height)
+        
+        super.viewWillLayoutSubviews()
     }
 
     @IBAction func sliderDidChange(_ slider: UISlider) {
@@ -69,6 +75,17 @@ class TransformationsViewController: UIViewController {
         imageLayer.transform = transform
         
         updateLabels()
+    }
+    
+    private func loadImage() {
+        let image = UIImage(named: "eia1956-test-pattern.jpg")!
+        imageRatio = image.size.height / image.size.width
+        
+        imageLayer = CALayer()
+        imageLayer.frame = CGRect(origin: .zero, size: contentView.frame.size)
+        imageLayer.contents = image.cgImage
+        
+        contentView.layer.addSublayer(imageLayer)
     }
 
 }
