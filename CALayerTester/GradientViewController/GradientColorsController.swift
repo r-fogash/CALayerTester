@@ -45,7 +45,7 @@ class GradientColorsController: UIViewController, GradientSettingsContainer {
     
     func presentColorPicker() {
         let colorPicker = UIColorPickerViewController()
-        colorPicker.title = "Gradient colort"
+        colorPicker.title = "Gradient color"
         colorPicker.supportsAlpha = false
         colorPicker.delegate = self
         colorPicker.modalPresentationStyle = .popover

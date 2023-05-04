@@ -20,8 +20,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="y1D-UD-6AS" kind="relationship" relationship="viewControllers" id="kpg-Iw-edf"/>
-                        <segue destination="rLd-DN-41W" kind="relationship" relationship="viewControllers" id="0lN-4q-a4C"/>
-                        <segue destination="r5O-3v-jLK" kind="relationship" relationship="viewControllers" id="e10-Hp-x08"/>
                         <segue destination="fkk-xG-07N" kind="relationship" relationship="viewControllers" id="2gJ-6D-QgQ"/>
                     </connections>
                 </tabBarController>
@@ -38,15 +36,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-lc-uxF">
-                                <rect key="frame" x="159" y="74" width="75" height="35"/>
+                                <rect key="frame" x="166" y="74" width="61.333333333333343" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
                                 <connections>
                                     <action selector="start:" destination="r5O-3v-jLK" eventType="touchUpInside" id="vyS-aq-G9T"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-f8-Nd2">
-                                <rect key="frame" x="15" y="134" width="363" height="620"/>
+                                <rect key="frame" x="15" y="134" width="363" height="669"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
                         </subviews>
@@ -105,7 +103,7 @@
                             <constraint firstItem="alY-5x-0Fh" firstAttribute="leading" secondItem="2Vo-Ga-mkR" secondAttribute="leading" id="uF7-af-H3R"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gradient" id="9V4-nR-MP2"/>
+                    <tabBarItem key="tabBarItem" title="Gradient" image="sun.max.circle" catalog="system" id="9V4-nR-MP2"/>
                     <connections>
                         <outlet property="gradientView" destination="pxH-dR-xEO" id="XvQ-Bh-L9l"/>
                     </connections>
@@ -131,7 +129,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Ck-aal">
-                                <rect key="frame" x="15" y="124" width="363" height="630"/>
+                                <rect key="frame" x="15" y="124" width="363" height="679"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
                         </subviews>
@@ -265,7 +263,7 @@
                             <constraint firstItem="N9w-F9-Pis" firstAttribute="top" secondItem="xLZ-0f-XYi" secondAttribute="top" constant="20" id="zz9-hN-vls"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Transformations" id="lf5-he-l90"/>
+                    <tabBarItem key="tabBarItem" title="Transformations" image="square.stack.3d.down.forward" catalog="system" id="lf5-he-l90"/>
                     <connections>
                         <outlet property="contentView" destination="N9w-F9-Pis" id="539-gr-sCI"/>
                         <outlet property="perspectiveLabel" destination="2CY-WW-kQl" id="3NM-Kp-DIc"/>
@@ -653,14 +651,16 @@
         <image name="paintpalette.fill" catalog="system" width="128" height="105"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="square.stack.3d.down.forward" catalog="system" width="123" height="128"/>
+        <image name="sun.max.circle" catalog="system" width="128" height="123"/>
         <namedColor name="GradientSPTintColor">
-            <color red="0.94524902105331421" green="0.64965361356735229" blue="0.11417005956172943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94499999284744263" green="0.64999997615814209" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TransformationSPTintColor">
-            <color red="0.62715667486190796" green="0.091236300766468048" blue="0.18145520985126495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.62699997425079346" green="0.090999998152256012" blue="0.18099997937679291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
-            <color red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.26100000739097595" green="0.26100000739097595" blue="0.26100000739097595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
