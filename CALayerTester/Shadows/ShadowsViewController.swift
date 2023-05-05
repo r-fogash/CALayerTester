@@ -8,10 +8,11 @@
 import UIKit
 
 class ShadowsViewController: UIViewController {
-
+    
     private var shapeLayer: CAShapeLayer!
     private var didSetup = false
-
+    
+    @IBOutlet weak var shapeSegmentedColor: UISegmentedControl!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var shadowColorView: UIView!
     @IBOutlet weak var shadowColorLabel: ControlValueLabel!
@@ -40,6 +41,8 @@ class ShadowsViewController: UIViewController {
             setShadowOffsetXStepperValue()
             setShadowOffsetYLabelValue()
             setShadowOffsetYStepperValue()
+            
+            drawLine()
         }
     }
     
@@ -71,13 +74,19 @@ class ShadowsViewController: UIViewController {
         setShadowOffsetYLabelValue()
     }
     
+    @IBAction func onShapeChangeValue(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: drawLine()
+        case 1: drawCurve()
+        case 2: drawRect()
+        case 3: drawCircle()
+        default: break
+        }
+    }
+    
     private func installShapeLayer() {
-        let path = UIBezierPath()
-        path.move(to: .init(x: 20, y: 50))
-        path.addQuadCurve(to: .init(x: containerView.bounds.width - 30, y: 50), controlPoint: .init(x: containerView.bounds.width/2, y: 120))
-
         shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
+
         shapeLayer.strokeColor = UIColor.black.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         
@@ -131,7 +140,7 @@ class ShadowsViewController: UIViewController {
     }
     
     private func setShadowOffsetXLabelValue() {
-        shadowOffsetXLabel.text = String(format: "Shadow offset X: %0.2f", shadowOffsetXStepper.value)
+        shadowOffsetXLabel.text = String(format: "Shadow offset X: %0.2f", shapeLayer.shadowOffset.width)
     }
     
     private func setShadowOffsetXStepperValue() {
@@ -139,11 +148,39 @@ class ShadowsViewController: UIViewController {
     }
     
     private func setShadowOffsetYLabelValue() {
-        shadowOffsetYLabel.text = String(format: "Shadow offset Y: %0.2f", shadowOffsetYStepper.value)
+        shadowOffsetYLabel.text = String(format: "Shadow offset Y: %0.2f", shapeLayer.shadowOffset.height)
     }
     
     private func setShadowOffsetYStepperValue() {
         shadowOffsetYStepper.value = shapeLayer.shadowOffset.height
+    }
+    
+    private func drawLine() {
+        let path = UIBezierPath()
+        path.move(to: .init(x: 20, y: 50))
+        path.addLine(to: .init(x: containerView.bounds.width - 20, y: 50))
+        
+        shapeLayer.path = path.cgPath
+    }
+    
+    private func drawCurve() {
+        let path = UIBezierPath()
+        path.move(to: .init(x: 20, y: 50))
+        path.addQuadCurve(to: .init(x: containerView.bounds.width - 30, y: 50), controlPoint: .init(x: containerView.bounds.width/2, y: 120))
+        
+        shapeLayer.path = path.cgPath
+    }
+    
+    private func drawRect() {
+        let path = CGPath(rect: .init(x: 20, y: 20, width: containerView.bounds.width - 40, height: containerView.bounds.height - 40), transform: nil)
+        
+        shapeLayer.path = path
+    }
+    
+    private func drawCircle() {
+        let path = CGPath(ellipseIn: .init(x: 20, y: 20, width: 100, height: 100), transform: nil)
+        
+        shapeLayer.path = path
     }
 
 }

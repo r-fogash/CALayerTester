@@ -305,15 +305,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A6P-ge-1Hf">
+                                <rect key="frame" x="15" y="64" width="363" height="32"/>
+                                <segments>
+                                    <segment title="Line"/>
+                                    <segment title="Curve"/>
+                                    <segment title="Rect"/>
+                                    <segment title="Circle"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onShapeChangeValue:" destination="hFs-X6-LG1" eventType="valueChanged" id="DI1-zJ-sZZ"/>
+                                </connections>
+                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-wJ-ZD7">
-                                <rect key="frame" x="15" y="69" width="363" height="200"/>
+                                <rect key="frame" x="15" y="105" width="363" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="sJs-qa-GjV"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C95-ja-RVC">
-                                <rect key="frame" x="15" y="284" width="363" height="278"/>
+                                <rect key="frame" x="15" y="320" width="363" height="271.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-YJ-7e6">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="30"/>
@@ -351,16 +363,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1yP-yz-c9f">
-                                        <rect key="frame" x="0.0" y="40" width="363" height="53.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="40" width="363" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oppacity: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPE-E0-sK3" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-xg-cwj">
-                                                <rect key="frame" x="-2" y="23.333333333333314" width="367" height="31"/>
+                                                <rect key="frame" x="-2" y="20" width="367" height="31"/>
                                                 <connections>
                                                     <action selector="onShadowOpacityChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="0wk-qq-Idr"/>
                                                 </connections>
@@ -368,16 +380,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rGP-b3-Dre">
-                                        <rect key="frame" x="0.0" y="103.3333333333333" width="363" height="60.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="100" width="363" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYP-zt-uxz" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-Xe-FyJ">
-                                                <rect key="frame" x="-2" y="30.333333333333371" width="367" height="31"/>
+                                                <rect key="frame" x="-2" y="27" width="367" height="31"/>
                                                 <connections>
                                                     <action selector="onShadowRadiusChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="ZyO-Jy-A9d"/>
                                                 </connections>
@@ -385,7 +397,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-q2-aJS">
-                                        <rect key="frame" x="0.0" y="173.66666666666669" width="363" height="104.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="167" width="363" height="104.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hz-IZ-i3a">
                                                 <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
@@ -394,7 +406,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FUZ-Lf-LEH">
-                                                <rect key="frame" x="0.0" y="30.333333333333314" width="363" height="32"/>
+                                                <rect key="frame" x="0.0" y="30.333333333333371" width="363" height="32"/>
                                                 <subviews>
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-50" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-r7-k7I">
                                                         <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
@@ -411,7 +423,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-xB-mOB">
-                                                <rect key="frame" x="0.0" y="72.333333333333314" width="363" height="32"/>
+                                                <rect key="frame" x="0.0" y="72.333333333333371" width="363" height="32"/>
                                                 <subviews>
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-50" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="CDs-pq-8BF">
                                                         <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
@@ -437,10 +449,13 @@
                         <constraints>
                             <constraint firstItem="LWB-nM-xbD" firstAttribute="trailing" secondItem="C95-ja-RVC" secondAttribute="trailing" constant="15" id="0B7-Ab-j99"/>
                             <constraint firstItem="LWB-nM-xbD" firstAttribute="trailing" secondItem="2vm-wJ-ZD7" secondAttribute="trailing" constant="15" id="37o-JY-EgR"/>
-                            <constraint firstItem="2vm-wJ-ZD7" firstAttribute="top" secondItem="LWB-nM-xbD" secondAttribute="top" constant="10" id="Lc8-fk-gg5"/>
                             <constraint firstItem="C95-ja-RVC" firstAttribute="top" secondItem="2vm-wJ-ZD7" secondAttribute="bottom" constant="15" id="ThE-ro-bL2"/>
+                            <constraint firstItem="A6P-ge-1Hf" firstAttribute="top" secondItem="LWB-nM-xbD" secondAttribute="top" constant="5" id="Xew-Kl-kMB"/>
+                            <constraint firstItem="2vm-wJ-ZD7" firstAttribute="top" secondItem="A6P-ge-1Hf" secondAttribute="bottom" constant="10" id="aAi-1Z-5po"/>
+                            <constraint firstItem="LWB-nM-xbD" firstAttribute="trailing" secondItem="A6P-ge-1Hf" secondAttribute="trailing" constant="15" id="jtN-7T-SWW"/>
                             <constraint firstItem="2vm-wJ-ZD7" firstAttribute="leading" secondItem="LWB-nM-xbD" secondAttribute="leading" constant="15" id="psX-wG-BTo"/>
                             <constraint firstItem="C95-ja-RVC" firstAttribute="leading" secondItem="LWB-nM-xbD" secondAttribute="leading" constant="15" id="qti-2E-l2S"/>
+                            <constraint firstItem="A6P-ge-1Hf" firstAttribute="leading" secondItem="LWB-nM-xbD" secondAttribute="leading" constant="15" id="r9U-dz-IsZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shadows" image="shadow" catalog="system" id="vh2-QA-URu"/>
@@ -456,6 +471,7 @@
                         <outlet property="shadowOpacitySlider" destination="9xF-xg-cwj" id="PkK-5F-DXg"/>
                         <outlet property="shadowRadiusLabel" destination="fYP-zt-uxz" id="UMa-wW-D6g"/>
                         <outlet property="shadowRadiusSlider" destination="lk5-Xe-FyJ" id="rDp-PF-bK9"/>
+                        <outlet property="shapeSegmentedColor" destination="A6P-ge-1Hf" id="dYe-K1-6Nq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bu3-jW-MSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -633,13 +649,13 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#FF00FF00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-SJ-spY" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                    <rect key="frame" x="33.999999999999993" y="0.0" width="88.333333333333314" height="20"/>
+                                                                    <rect key="frame" x="34.000000000000007" y="0.0" width="78.666666666666686" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="W2A-DV-Ykj">
-                                                                    <rect key="frame" x="136.33333333333337" y="0.0" width="226.66666666666663" height="20"/>
+                                                                    <rect key="frame" x="126.66666666666664" y="0.0" width="236.33333333333337" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
                                                             </subviews>
@@ -648,13 +664,13 @@
                                                             <rect key="frame" x="0.0" y="30" width="363" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-cs-rvX" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="29.333333333333332" height="45"/>
                                                                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raV-BS-a02">
-                                                                    <rect key="frame" x="34.666666666666657" y="0.0" width="330.33333333333337" height="46"/>
+                                                                    <rect key="frame" x="30.333333333333343" y="0.0" width="334.66666666666663" height="46"/>
                                                                     <connections>
                                                                         <action selector="valueChanged:" destination="RpG-Ql-sqj" eventType="valueChanged" id="TcF-Fn-wVZ"/>
                                                                     </connections>
@@ -759,13 +775,13 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TqQ-8Q-oar">
-                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="301.33333333333326" height="31"/>
+                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="299" height="31"/>
                                                                 <connections>
                                                                     <action selector="sliderValueDidChange:" destination="PBg-ch-YNU" eventType="valueChanged" id="ZPB-CJ-rwL"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICg-gj-a8G" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                <rect key="frame" x="317.66666666666669" y="0.0" width="35.333333333333314" height="30"/>
+                                                                <rect key="frame" x="315.33333333333331" y="0.0" width="37.666666666666686" height="30"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -782,14 +798,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-rY-j25">
-                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="301.33333333333326" height="31"/>
+                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="299" height="31"/>
                                                                 <color key="tintColor" name="GradientSPTintColor"/>
                                                                 <connections>
                                                                     <action selector="sliderValueDidChange:" destination="PBg-ch-YNU" eventType="valueChanged" id="LZe-AY-nmn"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.823" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-OK-nu0" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                <rect key="frame" x="317.66666666666669" y="0.0" width="35.333333333333314" height="30"/>
+                                                                <rect key="frame" x="315.33333333333331" y="0.0" width="37.666666666666686" height="30"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -817,14 +833,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="meX-SC-KUs">
-                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="301.33333333333326" height="31"/>
+                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="299" height="31"/>
                                                                 <color key="tintColor" name="GradientSPTintColor"/>
                                                                 <connections>
                                                                     <action selector="sliderValueDidChange:" destination="PBg-ch-YNU" eventType="valueChanged" id="JQB-qS-HBF"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzs-Ch-BXA" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                <rect key="frame" x="317.66666666666669" y="0.0" width="35.333333333333314" height="30"/>
+                                                                <rect key="frame" x="315.33333333333331" y="0.0" width="37.666666666666686" height="30"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -841,14 +857,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="R1M-YK-Ua6">
-                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="301.33333333333326" height="31"/>
+                                                                <rect key="frame" x="13.333333333333343" y="0.0" width="299" height="31"/>
                                                                 <color key="tintColor" name="GradientSPTintColor"/>
                                                                 <connections>
                                                                     <action selector="sliderValueDidChange:" destination="PBg-ch-YNU" eventType="valueChanged" id="lyc-7z-FYB"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-Cl-fwV" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
-                                                                <rect key="frame" x="317.66666666666669" y="0.0" width="35.333333333333314" height="30"/>
+                                                                <rect key="frame" x="315.33333333333331" y="0.0" width="37.666666666666686" height="30"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -935,25 +951,40 @@
     </scenes>
     <designables>
         <designable name="0Xu-OK-nu0">
-            <size key="intrinsicContentSize" width="35.333333333333336" height="15.666666666666666"/>
+            <size key="intrinsicContentSize" width="37.666666666666664" height="17"/>
+        </designable>
+        <designable name="1GB-yv-4TR">
+            <size key="intrinsicContentSize" width="67" height="17"/>
         </designable>
         <designable name="ICg-gj-a8G">
-            <size key="intrinsicContentSize" width="35.333333333333336" height="15.666666666666666"/>
+            <size key="intrinsicContentSize" width="37.666666666666664" height="17"/>
         </designable>
         <designable name="M6c-cs-rvX">
-            <size key="intrinsicContentSize" width="33.666666666666664" height="16"/>
+            <size key="intrinsicContentSize" width="29.333333333333332" height="17"/>
         </designable>
         <designable name="Og3-7n-Jdl">
             <size key="intrinsicContentSize" width="10.333333333333334" height="17"/>
         </designable>
+        <designable name="Q2E-ai-ifR">
+            <size key="intrinsicContentSize" width="51.333333333333336" height="17"/>
+        </designable>
+        <designable name="VPE-E0-sK3">
+            <size key="intrinsicContentSize" width="76" height="17"/>
+        </designable>
         <designable name="Y2S-SJ-spY">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="78.666666666666671" height="17"/>
+        </designable>
+        <designable name="bph-hD-aXh">
+            <size key="intrinsicContentSize" width="53.666666666666664" height="17"/>
         </designable>
         <designable name="deg-Cl-fwV">
-            <size key="intrinsicContentSize" width="35.333333333333336" height="15.666666666666666"/>
+            <size key="intrinsicContentSize" width="37.666666666666664" height="17"/>
+        </designable>
+        <designable name="fYP-zt-uxz">
+            <size key="intrinsicContentSize" width="47" height="17"/>
         </designable>
         <designable name="lzs-Ch-BXA">
-            <size key="intrinsicContentSize" width="35.333333333333336" height="15.666666666666666"/>
+            <size key="intrinsicContentSize" width="37.666666666666664" height="17"/>
         </designable>
         <designable name="nJa-f7-5eW">
             <size key="intrinsicContentSize" width="10.333333333333334" height="17"/>
