@@ -8,5 +8,7 @@ This is a test projrct made for myself for a quick recapture on CoreAnimation's 
 Currently the project contains a test board for:
 - CAGradientLayer
 - CA3DTransform 
+- Line stroking
+- Shadows
 
 More test board will be added in the future.
