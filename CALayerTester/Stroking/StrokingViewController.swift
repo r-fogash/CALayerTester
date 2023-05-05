@@ -19,6 +19,7 @@ class StrokingViewController: UIViewController {
     @IBOutlet weak var lineWidthLabel: UILabel!
     
     private var shapeLayer: CAShapeLayer!
+    private var didSetup = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +39,17 @@ class StrokingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        addLinesToStroke()
-        applyValues()
-        setStrokeProgressSliderValues()
-        
-        setStokeProgressLabelValues()
-        setLineWidthLabelValue()
-        setLineWidthStepperValue()
+        if didSetup == false {
+            didSetup = true
+            
+            addLinesToStroke()
+            applyValues()
+            setStrokeProgressSliderValues()
+            
+            setStokeProgressLabelValues()
+            setLineWidthLabelValue()
+            setLineWidthStepperValue()
+        }
     }
     
     @IBAction func sliderValuesDidChange(_ sender: UISlider) {
