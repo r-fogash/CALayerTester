@@ -22,6 +22,7 @@
                         <segue destination="y1D-UD-6AS" kind="relationship" relationship="viewControllers" id="kpg-Iw-edf"/>
                         <segue destination="fkk-xG-07N" kind="relationship" relationship="viewControllers" id="2gJ-6D-QgQ"/>
                         <segue destination="a88-o7-hYK" kind="relationship" relationship="viewControllers" id="HY8-8U-u7K"/>
+                        <segue destination="hFs-X6-LG1" kind="relationship" relationship="viewControllers" id="8uW-X7-d43"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVh-J1-zAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -295,6 +296,176 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgn-qc-cbO" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-518" y="-104"/>
+        </scene>
+        <!--Shadows-->
+        <scene sceneID="4xX-ju-nOe">
+            <objects>
+                <viewController id="hFs-X6-LG1" customClass="ShadowsViewController" customModule="CALayerTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TbF-GD-5pY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-wJ-ZD7">
+                                <rect key="frame" x="15" y="69" width="363" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sJs-qa-GjV"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C95-ja-RVC">
+                                <rect key="frame" x="15" y="284" width="363" height="278"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-YJ-7e6">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Let-7h-mGm">
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="30"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="0Zo-WD-2Vq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <gestureRecognizers/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="3Di-Ad-Gan"/>
+                                                            <constraint firstAttribute="width" secondItem="0Zo-WD-2Vq" secondAttribute="height" multiplier="1:1" id="vSA-55-5x1"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="rsi-NY-6eL" appends="YES" id="xQL-Wt-lQh"/>
+                                                        </connections>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#0987845" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GB-yv-4TR" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="0.0" width="313" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Let-7h-mGm" secondAttribute="trailing" id="EAX-FW-zAY"/>
+                                            <constraint firstItem="Let-7h-mGm" firstAttribute="top" secondItem="rL7-YJ-7e6" secondAttribute="top" id="FcC-Vi-yFh"/>
+                                            <constraint firstAttribute="bottom" secondItem="Let-7h-mGm" secondAttribute="bottom" id="RTX-lF-ncD"/>
+                                            <constraint firstItem="Let-7h-mGm" firstAttribute="leading" secondItem="rL7-YJ-7e6" secondAttribute="leading" id="ly4-d9-5M1"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1yP-yz-c9f">
+                                        <rect key="frame" x="0.0" y="40" width="363" height="53.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oppacity: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPE-E0-sK3" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-xg-cwj">
+                                                <rect key="frame" x="-2" y="23.333333333333314" width="367" height="31"/>
+                                                <connections>
+                                                    <action selector="onShadowOpacityChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="0wk-qq-Idr"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rGP-b3-Dre">
+                                        <rect key="frame" x="0.0" y="103.3333333333333" width="363" height="60.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYP-zt-uxz" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-Xe-FyJ">
+                                                <rect key="frame" x="-2" y="30.333333333333371" width="367" height="31"/>
+                                                <connections>
+                                                    <action selector="onShadowRadiusChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="ZyO-Jy-A9d"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-q2-aJS">
+                                        <rect key="frame" x="0.0" y="173.66666666666669" width="363" height="104.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hz-IZ-i3a">
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FUZ-Lf-LEH">
+                                                <rect key="frame" x="0.0" y="30.333333333333314" width="363" height="32"/>
+                                                <subviews>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-50" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-r7-k7I">
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="onShadowOffsetXChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="w1V-Pm-VjW"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x: 0.001" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bph-hD-aXh" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
+                                                        <rect key="frame" x="97" y="0.0" width="266" height="32"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-xB-mOB">
+                                                <rect key="frame" x="0.0" y="72.333333333333314" width="363" height="32"/>
+                                                <subviews>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-50" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="CDs-pq-8BF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="onShadowOffsetYChange:" destination="hFs-X6-LG1" eventType="valueChanged" id="xa7-OB-rug"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y: 0.111" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2E-ai-ifR" customClass="ControlValueLabel" customModule="CALayerTester" customModuleProvider="target">
+                                                        <rect key="frame" x="97" y="0.0" width="266" height="32"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LWB-nM-xbD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LWB-nM-xbD" firstAttribute="trailing" secondItem="C95-ja-RVC" secondAttribute="trailing" constant="15" id="0B7-Ab-j99"/>
+                            <constraint firstItem="LWB-nM-xbD" firstAttribute="trailing" secondItem="2vm-wJ-ZD7" secondAttribute="trailing" constant="15" id="37o-JY-EgR"/>
+                            <constraint firstItem="2vm-wJ-ZD7" firstAttribute="top" secondItem="LWB-nM-xbD" secondAttribute="top" constant="10" id="Lc8-fk-gg5"/>
+                            <constraint firstItem="C95-ja-RVC" firstAttribute="top" secondItem="2vm-wJ-ZD7" secondAttribute="bottom" constant="15" id="ThE-ro-bL2"/>
+                            <constraint firstItem="2vm-wJ-ZD7" firstAttribute="leading" secondItem="LWB-nM-xbD" secondAttribute="leading" constant="15" id="psX-wG-BTo"/>
+                            <constraint firstItem="C95-ja-RVC" firstAttribute="leading" secondItem="LWB-nM-xbD" secondAttribute="leading" constant="15" id="qti-2E-l2S"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shadows" image="shadow" catalog="system" id="vh2-QA-URu"/>
+                    <connections>
+                        <outlet property="containerView" destination="2vm-wJ-ZD7" id="6Qc-Sf-S8K"/>
+                        <outlet property="shadowColorLabel" destination="1GB-yv-4TR" id="lp0-uO-8Rr"/>
+                        <outlet property="shadowColorView" destination="0Zo-WD-2Vq" id="KqL-Wk-Z6m"/>
+                        <outlet property="shadowOffsetXLabel" destination="bph-hD-aXh" id="z7c-xg-DBz"/>
+                        <outlet property="shadowOffsetXStepper" destination="mpa-r7-k7I" id="2SE-Nr-w9B"/>
+                        <outlet property="shadowOffsetYLabel" destination="Q2E-ai-ifR" id="aVi-0w-Uhy"/>
+                        <outlet property="shadowOffsetYStepper" destination="CDs-pq-8BF" id="90G-P8-ptb"/>
+                        <outlet property="shadowOpacityLabel" destination="VPE-E0-sK3" id="8iK-iJ-MD4"/>
+                        <outlet property="shadowOpacitySlider" destination="9xF-xg-cwj" id="PkK-5F-DXg"/>
+                        <outlet property="shadowRadiusLabel" destination="fYP-zt-uxz" id="UMa-wW-D6g"/>
+                        <outlet property="shadowRadiusSlider" destination="lk5-Xe-FyJ" id="rDp-PF-bK9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bu3-jW-MSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rsi-NY-6eL">
+                    <connections>
+                        <action selector="onTouchShadowColor" destination="hFs-X6-LG1" id="k2Y-ch-GXM"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1303" y="402"/>
         </scene>
         <!--Stroking-->
         <scene sceneID="JQQ-kt-i3Z">
@@ -798,6 +969,7 @@
         <image name="paintpalette.fill" catalog="system" width="128" height="105"/>
         <image name="pencil.line" catalog="system" width="128" height="98"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <image name="shadow" catalog="system" width="128" height="122"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <image name="square.stack.3d.down.forward" catalog="system" width="123" height="128"/>
         <image name="sun.max.circle" catalog="system" width="128" height="123"/>
@@ -815,6 +987,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
