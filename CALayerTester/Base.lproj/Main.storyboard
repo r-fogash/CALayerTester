@@ -305,14 +305,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3p-Wx-ERB">
-                                <rect key="frame" x="0.0" y="59" width="393" height="393"/>
+                                <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="196.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="h3p-Wx-ERB" secondAttribute="height" multiplier="1:1" id="rFS-bu-Yf3"/>
+                                    <constraint firstAttribute="width" secondItem="h3p-Wx-ERB" secondAttribute="height" multiplier="2:1" id="rFS-bu-Yf3"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="5, 5" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w2m-Mv-dzb">
-                                <rect key="frame" x="16" y="472" width="361" height="40"/>
+                                <rect key="frame" x="16" y="275.66666666666669" width="361" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.9919411761674225" blue="0.94148958299885654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4Un-qm-QQh"/>
@@ -325,13 +325,13 @@
                                 </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dash pattern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxJ-DS-2I2">
-                                <rect key="frame" x="16.000000000000007" y="527" width="98.666666666666686" height="20.333333333333371"/>
+                                <rect key="frame" x="16.000000000000007" y="330.66666666666669" width="98.666666666666686" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-y4-tVA">
-                                <rect key="frame" x="16" y="567.33333333333337" width="361" height="121.66666666666663"/>
+                                <rect key="frame" x="16" y="371" width="361" height="184.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6yP-VZ-NYT">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="53.333333333333336"/>
@@ -343,7 +343,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YYk-nI-We2">
-                                                <rect key="frame" x="-2" y="23.333333333333258" width="365" height="31"/>
+                                                <rect key="frame" x="-2" y="23.333333333333314" width="365" height="31"/>
                                                 <connections>
                                                     <action selector="sliderValuesDidChange:" destination="a88-o7-hYK" eventType="valueChanged" id="FtU-Qy-OKU"/>
                                                 </connections>
@@ -351,7 +351,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GtF-Kh-Fhs">
-                                        <rect key="frame" x="0.0" y="68.333333333333258" width="361" height="53.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="68.333333333333314" width="361" height="53.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stroke end" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za1-xh-rwZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="20.333333333333332"/>
@@ -367,6 +367,30 @@
                                             </slider>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3g-fw-7VY">
+                                        <rect key="frame" x="0.0" y="136.66666666666669" width="361" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="T7E-GR-ElG"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-ds-DF5">
+                                        <rect key="frame" x="0.0" y="152.66666666666663" width="361" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="j1i-Gr-TIv">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="lineWidthDidChangeValue:" destination="a88-o7-hYK" eventType="valueChanged" id="TiI-TG-Mg1"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line width: 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bks-27-n2Y">
+                                                <rect key="frame" x="109" y="0.0" width="252" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -374,6 +398,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h3p-Wx-ERB" firstAttribute="leading" secondItem="XcJ-kR-XMA" secondAttribute="leading" id="1Ae-oh-N1q"/>
+                            <constraint firstItem="XcJ-kR-XMA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZxJ-DS-2I2" secondAttribute="trailing" symbolic="YES" id="51X-vV-TTl"/>
                             <constraint firstItem="ZxJ-DS-2I2" firstAttribute="leading" secondItem="XcJ-kR-XMA" secondAttribute="leading" constant="16" id="J3b-RO-0nC"/>
                             <constraint firstItem="gNY-y4-tVA" firstAttribute="top" secondItem="ZxJ-DS-2I2" secondAttribute="bottom" constant="20" id="JFN-my-h2K"/>
                             <constraint firstItem="XcJ-kR-XMA" firstAttribute="trailing" secondItem="gNY-y4-tVA" secondAttribute="trailing" constant="16" id="JIM-S1-BdA"/>
@@ -389,6 +414,8 @@
                     <tabBarItem key="tabBarItem" title="Stroking" image="pencil.line" catalog="system" id="oxg-KG-0dx"/>
                     <connections>
                         <outlet property="contentView" destination="h3p-Wx-ERB" id="BLh-rn-Uow"/>
+                        <outlet property="lineWidthLabel" destination="bks-27-n2Y" id="3Kg-cd-IR2"/>
+                        <outlet property="lineWidthStepper" destination="j1i-Gr-TIv" id="bqM-OZ-LiE"/>
                         <outlet property="strokeEndLabel" destination="Za1-xh-rwZ" id="zfX-cx-ohx"/>
                         <outlet property="strokeEndSlider" destination="GDJ-yA-4PM" id="cbH-V4-G93"/>
                         <outlet property="strokeStartLabel" destination="gIR-yC-ANq" id="YqI-ox-bem"/>
@@ -794,6 +821,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,8 @@ class StrokingViewController: UIViewController {
     @IBOutlet weak var strokeEndSlider: UISlider!
     @IBOutlet weak var strokeStartLabel: UILabel!
     @IBOutlet weak var strokeEndLabel: UILabel!
+    @IBOutlet weak var lineWidthStepper: UIStepper!
+    @IBOutlet weak var lineWidthLabel: UILabel!
     
     private var shapeLayer: CAShapeLayer!
     
@@ -41,6 +43,8 @@ class StrokingViewController: UIViewController {
         setStrokeProgressSliderValues()
         
         setStokeProgressLabelValues()
+        setLineWidthLabelValue()
+        setLineWidthStepperValue()
     }
     
     @IBAction func sliderValuesDidChange(_ sender: UISlider) {
@@ -48,6 +52,11 @@ class StrokingViewController: UIViewController {
         shapeLayer.strokeEnd = CGFloat(strokeEndSlider.value)
         
         setStokeProgressLabelValues()
+    }
+    
+    @IBAction func lineWidthDidChangeValue(_ stepper: UIStepper) {
+        shapeLayer.lineWidth = stepper.value
+        setLineWidthLabelValue()
     }
     
     private func addLinesToStroke() {
@@ -80,6 +89,14 @@ class StrokingViewController: UIViewController {
     fileprivate func setStrokeProgressSliderValues() {
         strokeStartSlider.value = Float(shapeLayer.strokeStart)
         strokeEndSlider.value = Float(shapeLayer.strokeEnd)
+    }
+    
+    private func setLineWidthLabelValue() {
+        lineWidthLabel.text = String(format: "Line width: %i", Int(shapeLayer.lineWidth))
+    }
+    
+    private func setLineWidthStepperValue() {
+        lineWidthStepper.value = shapeLayer.lineWidth
     }
     
     private func applyValues() {
